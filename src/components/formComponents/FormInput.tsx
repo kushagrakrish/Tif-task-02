@@ -32,7 +32,6 @@ const FormInput = React.forwardRef<HTMLInputElement, IFormInputProps>(
       const { name, value } = event.target;
       const updatedValues = { ...state };
 
-      // update the property with the new value but before that cross check the property name
       if (name === "requisitionTitle") {
         updatedValues.requisitionDetails[name] = value;
       } else if (name === "noOfOpenings") {
@@ -45,7 +44,6 @@ const FormInput = React.forwardRef<HTMLInputElement, IFormInputProps>(
         updatedValues.jobDetails[name] = value;
       }
 
-      // update the state with the new values
       setState(updatedValues);
       onChange && onChange(event);
     };
